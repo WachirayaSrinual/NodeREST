@@ -14,17 +14,17 @@ let books = [
 {
     id: 1,
     title: 'Book 1',
-    authot: 'Author 1'
+    author: 'Author 1'
 },
 {
     id: 2,
     title: 'Book 2',
-    authot: 'Author 2'
+    author: 'Author 2'
 },
 {
     id: 3,
     title: 'Book 3',
-    authot: 'Author 3'
+    author: 'Author 3'
 }
 ];
 
@@ -45,7 +45,7 @@ app.post('/books', (req, res) => {
     const book = {
         id: books.length + 1,
         title: req.body.title,
-        authot: req.body.authot
+        author: req.body.author
     };
     books.push(book);
     res.send(book);
@@ -56,7 +56,7 @@ app.put('/books:id', (req, res) => {
     const book = books.find(b => b.id === parseInt(req.params.id));
     if (!book) res.status(404).send('Book not found');
     book.title = req.body.title;
-    book.authot = req.body.authot;
+    book.author = req.body.author;
     res.send(book);
 });
 
@@ -70,4 +70,4 @@ app.delete('/books:id', (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(post, () => console.log(`Listening on port ${port}...`));
+app.listen(port, () => console.log(`Listening on port ${port}...`));

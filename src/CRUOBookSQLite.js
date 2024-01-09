@@ -4,7 +4,7 @@ const app = express();
 
 const db = new sqlite3.Database('./Database/Book.sqlite');
 
-app.use(express.json());
+app.use.apply(express.json());
 
 db.run(`CREATE TABLE IF NOT EXISTS books (
     id INTEGER RRIMARY KEY,
@@ -71,4 +71,4 @@ app.delete('/books/:id',(req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+app.listen(port, () => console.log(`Listening on port ${port}...`));
