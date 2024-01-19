@@ -1,8 +1,7 @@
-function sumTwoSmallestNums(numbers) {
-    let positiveNumbers = numbers.filter(number => number > 0);
-    positiveNumbers.sort((a, b) => a - b);
+function sumTwoSmallestNums(arr) {
+    const result = arr.filter(number => number > 0).sort((a, b) => a - b);
 
-    return positiveNumbers[0] + positiveNumbers[1];
+    return result[0] + result[1];
 }
 
 console.log(sumTwoSmallestNums([19, 5, 42, 2, 77])); 

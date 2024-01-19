@@ -1,6 +1,7 @@
 function isValidIP(str) {
     const parts = str.split(".");
-    if (parts.length !== 4) return false;
+    if (parts.length !== 4) 
+    return false;
 
     for (let part of parts) {
         if (!/^\d+$/.test(part)) return false; // ตรวจสอบว่าเป็นตัวเลข
